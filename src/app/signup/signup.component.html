@@ -1,0 +1,15 @@
+<div class="jumbotron text-center maincontainer">
+  <div>
+    <input [(ngModel)]="signup.name" placeholder="Name" />
+    <input [(ngModel)]="signup.email" placeholder="Email" />
+    <input [(ngModel)]="signup.username" placeholder="Username" />
+    <input [(ngModel)]="signup.password" placeholder="Password" />
+    <input [(ngModel)]="signup.type" placeholder="Type" />
+  </div>
+  <div>
+    <button (click)="signupcheck()">Signup</button>
+    <a routerLink='/login'>
+      <button>Login</button>
+    </a>
+  </div>
+</div>
