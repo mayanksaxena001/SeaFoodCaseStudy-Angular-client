@@ -6,20 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  authenticated: boolean = false;
-  userid: string = '';
+  username: string = 'ADMIN';
+  account: string = 'MAYANK';
+  types: string[] = ["Fisherman", "Buyer", "Restaurant Owner"];
+  entities = [];
+  transferEntities = [];
+  selectedType: string;
   constructor() { }
 
   ngOnInit() {
-    this.refresh();
   }
 
-  refresh() {
-    if (this.userid) {
-      this.authenticated = false;
-    }
+  showAdminDetails() {
+
   }
-
-
-
 }

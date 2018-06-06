@@ -1,34 +1,34 @@
-<!-- <div class="jumbotron text-center maincontainer">
+<div class="jumbotron text-center maincontainer">
   <form name="LoginForm" novalidate>
     <table class="table-condensed" style="margin-left:auto; margin-right:auto">
       <tr>
         <td>
-          <input [(ngModel)]="login.username" placeholder="Username"></input>
+          <input [(ngModel)]="login.username" placeholder="Username" [ngModelOptions]="{standalone: true}">
         </td>
       </tr>
       <tr>
         <td>
-          <input [(ngModel)]="login.password" placeholder="Password"></input>
+          <input [(ngModel)]="login.password" placeholder="Password" [ngModelOptions]="{standalone: true}">
         </td>
       </tr>
       <tr>
         <td>
-          <button ng-click="LoginClicked()" class="btn btn-primary buttonlarge float-right">Login</button>
+          <button (click)="loginCheck()" class="btn btn-primary buttonlarge float-right">Login</button>
         </td>
       </tr>
       <tr>
         <td>
-          <button ng-click="toSignUpClicked()" class="buttonlink float-right">Sign Up
+          <button routerLink='/signup' class="buttonlink float-right">Sign Up
             <span>
-              <img src="SVGs/arrow_white.svg">
+              <img src="/SVGs/arrow_white.svg">
             </span>
           </button>
         </td>
       </tr>
     </table>
   </form>
-</div> -->
-<div class="jumbotron text-center maincontainer">
+</div>
+<!-- <div class="jumbotron text-center maincontainer">
   <div>
     <input [(ngModel)]="login.username" placeholder="Username" />
     <input [(ngModel)]="login.password" placeholder="Password" />
@@ -39,4 +39,4 @@
       <button>Signup</button>
     </a>
   </div>
-</div>
+</div> -->

@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  types: string[] = ["Fisherman", "Buyer", "Restaurant Owner"];;
+  constructor(private authService: AuthService, private router: Router) { }
+  types: string[] = ["Fisherman", "Buyer", "Restaurant Owner"];
   signup: Signup = {
     name: "",
     email: "",
@@ -17,7 +18,7 @@ export class SignupComponent implements OnInit {
     password: "",
     type: ""
   };
-  constructor(private authService: AuthService, private router: Router) { }
+  selectedType: string = this.types[0];
 
   ngOnInit() {
   }

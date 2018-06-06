@@ -1,4 +1,50 @@
 <div class="jumbotron text-center maincontainer">
+  <form name="SignUpForm" novalidate>
+    <table class="table-condensed" style="margin-left:auto; margin-right:auto">
+      <tr>
+        <td>
+          <input type="text" [(ngModel)]="signup.name" placeholder="Name" [ngModelOptions]="{standalone: true}">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" [(ngModel)]="signup.email" placeholder="Email" [ngModelOptions]="{standalone: true}">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" [(ngModel)]="signup.username" placeholder="Username" [ngModelOptions]="{standalone: true}">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="text" [(ngModel)]="signup.password" placeholder="Password" [ngModelOptions]="{standalone: true}">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <select novalidate="" ng-model="selectedType" style="width:100%" ng-options="type for type in types">
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button (click)="signupcheck()" class="btn btn-primary buttonlarge float-right">Sign Up</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button routerLink='/login' class="buttonlink float-right">Login
+            <span>
+              <img src="SVGs/arrow_white.svg">
+            </span>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<!-- <div class="jumbotron text-center maincontainer">
   <div>
     <input [(ngModel)]="signup.name" placeholder="Name" />
     <input [(ngModel)]="signup.email" placeholder="Email" />
@@ -12,4 +58,4 @@
       <button>Login</button>
     </a>
   </div>
-</div>
+</div> -->

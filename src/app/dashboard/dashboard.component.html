@@ -1,3 +1,90 @@
-<h1>
-	Dashboard workss!!
-</h1>
+<div class="container-fluid maincontainer">
+  <div class="row margin5">
+    <label style="margin:5px" class="adminlabel float-right">
+      {{username}} :
+      <span class="adminname" ng-click="showAdminDetails()">
+        {{account}}
+      </span>
+    </label>
+  </div>
+  <div class="row margin5 padding10">
+    <div class="col-sm-2 padding10">
+      <label>TRANSFER ENTITIES</label>
+    </div>
+    <div class="col-sm-2 padding15">
+      <select style="width:100%" ng-model="selectedType" ng-options="type for type in types">
+      </select>
+    </div>
+    <div class="col-sm-8 padding10 scrollablediv">
+      <table class="table table-sm table-dark">
+        <tr>
+          <th>ENTITY ID</th>
+          <th>ENTITY NAME</th>
+          <th>VALUE</th>
+          <th>QUANTITY</th>
+          <th>OWNER</th>
+          <th class="a-center">TRANSACT</th>
+        </tr>
+        <tr *ngIf='!transferEntities' ng-repeat="x in transferEntities">
+          <td>{{ x.entityid }}</td>
+          <td>{{ x.entityName }}</td>
+          <td>{{ x.quantity }}</td>
+          <td>{{ x.value }}</td>
+          <td>{{ x.owner }}</td>
+          <td class="a-center">
+            <button ng-click="TransactBtnClicked(x.entity)" class="buttonsmall">
+              <span>
+                <img src="SVGs/transact_dark.svg">
+              </span>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row margin5 padding15">
+    <div class="col-sm-2 padding10">
+      <label>COMPLETE BLOCKCHAIN VIEW</label>
+    </div>
+    <div class="col-sm-2 padding10">
+      <button ng-click="addEntityClicked()" class="buttonlarge" style="width:100% !important">ADD ENTITY</button>
+      <!--<button ng-click="toggleModal('Add Entity')" class="buttonlarge" style="width:100% !important">ADD ENTITY</button>-->
+    </div>
+    <div class="col-sm-8 padding10 scrollablediv">
+      <table class="table table-sm table-dark">
+        <tr>
+          <th>ENTITY ID</th>
+          <th>ENTITY NAME</th>
+          <th>VALUE</th>
+          <th>QUANTITY</th>
+          <th>EDIT</th>
+          <th>STATUS ID</th>
+        </tr>
+        <tr *ngIf='!transferEntities' ng-repeat="x in transferEntities">
+          <td>
+            <button ng-click="entityidClicked(x.entityid)" class="buttonlink aqua_color">{{ x.entityid }}</button>
+          </td>
+          <td>{{ x.entity }}</td>
+          <td>{{ x.value }}</td>
+          <td>{{ x.quantity }}</td>
+          <td>
+            <button ng-click="EditBtnClicked(x.entityid)" class="buttonsmall">
+              <span>
+                <img src="SVGs/edit_dark.svg">
+              </span>
+            </button>
+          </td>
+          <td>
+            <button ng-click="statusidClicked(x.statusid )" class="buttonlink aqua_color">{{ x.statusid }}</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <hr>
+
+</div>
